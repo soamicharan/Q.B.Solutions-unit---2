@@ -2,7 +2,7 @@
 #include<conio.h>
 int main()
 {
-    int i1,j1,i2,j2;
+    int i1,j1,i2,j2,**mat1,**mat2,a,b,c,d,ans=0,**rmat;
     printf("Enter Dimensions of iXj of first Matrix.\n");
     scanf("%d%d",&i1,&j1);
     printf("Enter Dimensions of iXj of second Matrix.\n");
@@ -12,7 +12,15 @@ int main()
         printf("Entered matrices are not possible to multiply.\n");
         exit(1);
     }
-    int mat1[i1][j1],mat2[i2][j2],a,b,c,d,ans=0,rmat[i1][j2];
+    mat1=(int *)malloc(j1*sizeof(int));
+    mat2=(int *)malloc(j2*sizeof(int));
+    rmat=(int *)malloc(j2*sizeof(int));
+    for(a=0;a<i1;a++)
+        mat1[a]=(int *)malloc(j1*sizeof(int));
+    for(a=0;a<i2;a++)
+        mat2[a]=(int *)malloc(j2*sizeof(int));
+    for(a=0;a<i1;a++)
+        rmat[a]=(int *)malloxt(j2*sizeof(int));
     printf("Enter first Matrix.\n");
     for(a=0;a<i1;a++)
     {
@@ -50,5 +58,6 @@ int main()
             }
             printf("\n");
         }
+    free(mat1);free(mat2);free(rmat);
         getch();
 }
