@@ -2,10 +2,11 @@
 #include<conio.h>
 int main()
 {
-     int n;
-    printf("Enter Number of Entries.\n");scanf("%d",&n);
+     int n,a,*arr,b,temp;
+    printf("Enter Number of Entries.\n");
+     scanf("%d",&n);
+     arr=(int *)malloc(n*sizeof(int));
     printf("Enter Numbers.\n");
-    int a,arr[n],b,temp;
     for(a=0;a<n;a++)
     scanf("%d",&arr[a]);
 
